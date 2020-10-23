@@ -1,0 +1,92 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int tanggal, bulan, tahun;
+	int bln[13];
+
+    printf("**PROGRAM KONVERSI KALENDER JULIAN KE KALENDER MASEHI**\n\n");
+    printf("Tahun ");
+    scanf("%d", &tahun);
+	printf("Hari ke-");
+	scanf("%d", &tanggal);
+
+    if(tahun%4==0)
+    {
+        if(tanggal<=366)
+        {
+            bln[1]=31;
+            bln[2]=29;
+            bln[3]=31;
+            bln[4]=30;
+            bln[5]=31;
+            bln[6]=30;
+            bln[7]=31;
+            bln[8]=31;
+            bln[9]=30;
+            bln[10]=31;
+            bln[11]=30;
+            bln[12]=31;
+        }
+        else
+            return 0;
+    }
+
+    else
+    {
+        if(tanggal<=365)
+        {
+            bln[1]=31;
+            bln[2]=28;
+            bln[3]=31;
+            bln[4]=30;
+            bln[5]=31;
+            bln[6]=30;
+            bln[7]=31;
+            bln[8]=31;
+            bln[9]=30;
+            bln[10]=31;
+            bln[11]=30;
+            bln[12]=31;
+        }
+        else
+            return 0;
+    }
+
+        int i=1;
+        while(tanggal - bln[i]>0)
+        {
+            tanggal = tanggal - bln[i];
+            i++;
+        }
+
+        switch(i)
+        {
+        case 1: printf ("\n%d Januari %d", tanggal, tahun);
+            break;
+        case 2: printf ("\n%d Februari %d", tanggal, tahun);
+            break;
+        case 3: printf ("\n%d Maret %d", tanggal, tahun);
+            break;
+        case 4: printf ("\n%d April %d", tanggal, tahun);
+            break;
+        case 5: printf ("\n%d Mei %d", tanggal, tahun);
+            break;
+        case 6: printf ("\n%d Juni %d", tanggal, tahun);
+            break;
+        case 7: printf ("\n%d Juli %d", tanggal, tahun);
+            break;
+        case 8: printf ("\n%d Agustus %d", tanggal, tahun);
+            break;
+        case 9: printf ("\n%d September %d", tanggal, tahun);
+            break;
+        case 10: printf ("\n%d Oktober %d", tanggal, tahun);
+            break;
+        case 11: printf ("\n%d November %d", tanggal, tahun);
+            break;
+        case 12: printf ("\n%d Desember %d", tanggal, tahun);
+        }
+printf("\n");
+return 0;
+}
